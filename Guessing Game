@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <math.h>
+#define max 10000
+int x,i,op,y,resp,aux;
+
+int guess(int res, int cont){
+	
+printf("\n  ----------------------------------------- GUESSING GAME ------------------------------------------\n");
+
+
+	printf("\n      O NUMERO ATUAL É:\n");
+	printf("   1) Par   (Divida seu numero por 2!)\n");
+	printf("   2) Impar (Subtrai 1 e Divida por 2!)\n");
+	printf("   3) Igual a 1");
+	printf("\n\    Opcao:");
+    scanf("%d",&op);
+    system("cls");
+    
+	if (op==1){
+    x+=pow(2,cont); 
+	guess(x,cont+1);
+	}
+	
+	if (op==2){
+    y+=pow(2,cont); 
+    guess(x,cont+1);
+	}
+	    
+	if (op==3){
+    return res=(pow(2,cont))+y; 
+    }
+      
+    else
+	printf("\n\n   OPÇÃO ERRADA!\n\n");
+
+}
+
+main(){
+
+setlocale(LC_ALL,"");
+printf("\n  ----------------------------------------- GUESSING GAME ------------------------------------------\n");
+printf("\n      VAMOS JOGAR UM JOGO DE ADIVINHA!\n");
+printf("\n   Você irá pensar em um número,");
+printf("\n   E eu irei descobrir o número que você pensou.\n");
+
+printf("\n           INSTRUÇÕES!\n\n");
+printf(" * Se  o  número  for   PAR,  tecle 1) e mentalmente, faça o que pede.\n");
+printf(" * Se  o  número  for  IMPAR, tecle 2) e mentalmente, faça o que pede.\n");
+printf(" * Se o número for IGUAL a 1, tecle 3).\n");
+printf("\n          VAMOS COMEÇAR!\n");
+printf("\n       PENSE EM UM NUMERO!\n\n");
+
+system("Pause");
+system("cls");
+
+resp=guess(aux,0);
+resp+=x+y;
+
+printf("\n\n  O NUMERO QUE VOCÊ PENSOU É: %d\n\n",resp);
+
+return 0;
+}
+
+
